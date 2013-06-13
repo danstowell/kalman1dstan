@@ -21,10 +21,10 @@ x = [1.23] # states, with initial value
 
 # generate states, markov style
 for i in range(1,n):
-	x.append(f_off + np.random.normal(f_mul * x[-1], 1./f_std))
+	x.append(f_off + np.random.normal(f_mul * x[-1], f_std))
 
 # generate observations
-y = [h_off + np.random.normal(h_mul * datum, 1./h_std) for datum in x]
+y = [h_off + np.random.normal(h_mul * datum, h_std) for datum in x]
 
 # write R data
 print "N <- %i" % n
